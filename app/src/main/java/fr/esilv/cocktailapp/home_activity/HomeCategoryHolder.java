@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.api.CategorySearchResultCocktails;
+import fr.esilv.cocktailapp.api.Cocktail;
 import fr.esilv.cocktailapp.cocktail_activity.CocktailActivity;
 
 
@@ -31,12 +31,12 @@ public class HomeCategoryHolder extends RecyclerView.ViewHolder implements View.
 
     }
 
-    public void bind(final CategorySearchResultCocktails categorySearchResultCocktails) {
-        nameDrink = categorySearchResultCocktails.getStrDrink();
+    public void bind(final Cocktail Cocktail) {
+        nameDrink = Cocktail.getStrDrink();
         nameDrinkView.setText(nameDrink);
-        thumbDrink = categorySearchResultCocktails.getStrDrinkThumb();
+        thumbDrink = Cocktail.getStrDrinkThumb();
         Picasso.get().load(thumbDrink).resize(500, 500).centerCrop().into(thumbDrinkView);
-        idDrink = categorySearchResultCocktails.getIdDrink();
+        idDrink = Cocktail.getIdDrink();
 
     }
 

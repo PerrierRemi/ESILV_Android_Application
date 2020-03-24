@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.api.CategorySearchResponseCocktails;
-import fr.esilv.cocktailapp.api.CategorySearchResultCocktails;
+import fr.esilv.cocktailapp.api.Cocktail;
+import fr.esilv.cocktailapp.api.CocktailList;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
 import fr.esilv.cocktailapp.home_activity.HomeCategoryAdapter;
 import retrofit2.Call;
@@ -22,8 +22,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CategoryActivity extends AppCompatActivity {
 
-    private RecyclerView drinkView;
     private final String baseURL = "https://www.thecocktaildb.com/api/json/v1/1/";
+    private RecyclerView drinkView;
     private TheCocktailDBService service;
     private String nameCategory;
 
@@ -40,12 +40,12 @@ public class CategoryActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         service = retrofit.create(TheCocktailDBService.class);
-        service.searchCategoryDrinks(nameCategory).enqueue(new Callback<CategorySearchResponseCocktails>() {
+        service.searchCategoryDrinks(nameCategory).enqueue(new Callback<CocktailList>() {
             @Override
-            public void onResponse(Call<CategorySearchResponseCocktails> call, Response<CategorySearchResponseCocktails> response) {
+            public void onResponse(Call<CocktailList> call, Response<CocktailList> response) {
                 if (response.isSuccessful()) {
-                    CategorySearchResponseCocktails drinks = response.body();
-                    List<CategorySearchResultCocktails> c = null;
+                    CocktailList drinks = response.body();
+                    List<Cocktail> c = null;
                     if (drinks != null) {
                         c = drinks.getDrinks();
                     }
@@ -55,7 +55,7 @@ public class CategoryActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<CategorySearchResponseCocktails> call, Throwable t) {
+            public void onFailure(Call<CocktailList> call, Throwable t) {
 
             }
         });

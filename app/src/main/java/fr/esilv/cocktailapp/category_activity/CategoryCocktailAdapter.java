@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.api.CategorySearchResult;
+import fr.esilv.cocktailapp.api.Category;
 
 public class CategoryCocktailAdapter extends RecyclerView.Adapter<CategoryCocktailHolder> {
-    private final List<CategorySearchResult> categories;
+    private final List<Category> categories;
 
-    public CategoryCocktailAdapter(List<CategorySearchResult> categories) {
+    public CategoryCocktailAdapter(List<Category> categories) {
         this.categories = categories;
     }
 

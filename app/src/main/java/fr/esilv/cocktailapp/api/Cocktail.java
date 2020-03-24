@@ -1,10 +1,13 @@
 package fr.esilv.cocktailapp.api;
 
-public class CategorySearchResultCocktails {
-    private String strDrink;
-    private String strDrinkThumb;
+public class Cocktail {
     private String idDrink;
+    private String strDrink;
+    private String strInstructions;
+    private String strDrinkThumb;
 
+    public Cocktail() {
+    }
 
     public String getIdDrink() {
         return idDrink;
@@ -12,6 +15,10 @@ public class CategorySearchResultCocktails {
 
     public String getStrDrink() {
         return strDrink;
+    }
+
+    public String getStrInstructions() {
+        return strInstructions;
     }
 
     public String getStrDrinkThumb() {

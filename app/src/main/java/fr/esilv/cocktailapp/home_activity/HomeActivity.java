@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.api.CategorySearchResponse;
-import fr.esilv.cocktailapp.api.CategorySearchResult;
+import fr.esilv.cocktailapp.api.Category;
+import fr.esilv.cocktailapp.api.CategoryList;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
 import fr.esilv.cocktailapp.category_activity.CategoryCocktailAdapter;
 import retrofit2.Call;
@@ -21,8 +21,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private RecyclerView categoryView;
     private final String baseURL = "https://www.thecocktaildb.com/api/json/v1/1/";
+    private RecyclerView categoryView;
     private TheCocktailDBService service;
 
     @Override
@@ -43,20 +43,21 @@ public class HomeActivity extends AppCompatActivity {
 
         service = retrofit.create(TheCocktailDBService.class);
 
-        service.searchCategory().enqueue(new Callback<CategorySearchResponse>() {
+        service.searchCategory().enqueue(new Callback<CategoryList>() {
             @Override
-            public void onResponse(Call<CategorySearchResponse> call, Response<CategorySearchResponse> response) {
+            public void onResponse(Call<CategoryList> call, Response<CategoryList> response) {
                 if (response.isSuccessful()) {
-                    CategorySearchResponse categories = response.body();
-                    List<CategorySearchResult> c = null;
+                    CategoryList categories = response.body();
+                    List<Category> c = null;
                     if (categories != null) {
                         c = categories.getDrinks();
                     }
                     categoryView.setAdapter(new CategoryCocktailAdapter(c));
                 }
             }
+
             @Override
-            public void onFailure(Call<CategorySearchResponse> call, Throwable t) {
+            public void onFailure(Call<CategoryList> call, Throwable t) {
             }
         });
     }

@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 
 import java.util.List;
 
-public class CocktailSearchResponse {
-    private List<CocktailSearchResult> drinks;
+public class CocktailList {
+    private List<Cocktail> drinks;
 
     @NonNull
-    List<CocktailSearchResult> getDrinks() {
+    public List<Cocktail> getDrinks() {
         return drinks;
     }
 }

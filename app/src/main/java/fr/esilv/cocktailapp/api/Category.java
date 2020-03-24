@@ -1,6 +1,6 @@
 package fr.esilv.cocktailapp.api;
 
-public class CategorySearchResult {
+public class Category {
     private String strCategory;
 
     public String getStrCategory() {

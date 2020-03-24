@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.api.CategorySearchResult;
+import fr.esilv.cocktailapp.api.Category;
 
 public class CategoryCocktailHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     String nameCategory;
@@ -22,7 +22,7 @@ public class CategoryCocktailHolder extends RecyclerView.ViewHolder implements V
 
     }
 
-    public void bind(final CategorySearchResult categorySearchResult) {
+    public void bind(final Category categorySearchResult) {
         nameCategory = categorySearchResult.getStrCategory();
         nameCategoryView.setText(nameCategory);
     }
