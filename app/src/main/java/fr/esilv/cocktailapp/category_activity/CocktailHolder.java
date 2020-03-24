@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.home_activity;
+package fr.esilv.cocktailapp.category_activity;
 
 import android.content.Intent;
 import android.view.View;
@@ -15,7 +15,7 @@ import fr.esilv.cocktailapp.api.Cocktail;
 import fr.esilv.cocktailapp.cocktail_activity.CocktailActivity;
 
 
-public class HomeCategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class CocktailHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     String nameDrink;
     String thumbDrink;
     String idDrink;
@@ -23,7 +23,7 @@ public class HomeCategoryHolder extends RecyclerView.ViewHolder implements View.
     private TextView nameDrinkView;
     private ImageView thumbDrinkView;
 
-    public HomeCategoryHolder(@NonNull View itemView) {
+    public CocktailHolder(@NonNull View itemView) {
         super(itemView);
         this.nameDrinkView = itemView.findViewById(R.id.nameDrinkView);
         this.thumbDrinkView = itemView.findViewById(R.id.thumbDrinkView);

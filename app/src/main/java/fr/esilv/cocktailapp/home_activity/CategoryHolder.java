@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.category_activity;
+package fr.esilv.cocktailapp.home_activity;
 
 import android.content.Intent;
 import android.view.View;
@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Category;
+import fr.esilv.cocktailapp.category_activity.CategoryActivity;
 
-public class CategoryCocktailHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     String nameCategory;
 
     private TextView nameCategoryView;
 
-    public CategoryCocktailHolder(@NonNull View itemView) {
+    public CategoryHolder(@NonNull View itemView) {
         super(itemView);
         this.nameCategoryView = itemView.findViewById(R.id.CategoryName);
         itemView.setOnClickListener(this);

@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.home_activity;
+package fr.esilv.cocktailapp.category_activity;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,22 +12,22 @@ import java.util.List;
 import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Cocktail;
 
-public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryHolder> {
+public class CocktailAdapter extends RecyclerView.Adapter<CocktailHolder> {
     private final List<Cocktail> drinks;
 
-    public HomeCategoryAdapter(List<Cocktail> drinks) {
+    public CocktailAdapter(List<Cocktail> drinks) {
         this.drinks = drinks;
     }
 
     @NonNull
     @Override
-    public HomeCategoryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CocktailHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_cocktail_view, parent, false);
-        return new HomeCategoryHolder(view);
+        return new CocktailHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeCategoryHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CocktailHolder holder, int position) {
         holder.bind(drinks.get(position));
     }
 
