@@ -11,7 +11,7 @@ import java.util.List;
 
 import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Cocktail;
-import fr.esilv.cocktailapp.api.CocktailList;
+import fr.esilv.cocktailapp.api.CocktailArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
 import fr.esilv.cocktailapp.home_activity.HomeCategoryAdapter;
 import retrofit2.Call;
@@ -30,33 +30,36 @@ public class CategoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.category_activity);
+
+        // Set up RecyclerView
         drinkView = findViewById(R.id.recyclerDrink);
         drinkView.setLayoutManager(new GridLayoutManager(this, 2));
+
+        // Set up name category via Intent
         Intent intent = getIntent();
         nameCategory = intent.getExtras().getString("NAME_CATEGORY");
+
+        // Set up Retrofit for API call
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         service = retrofit.create(TheCocktailDBService.class);
-        service.searchCategoryDrinks(nameCategory).enqueue(new Callback<CocktailList>() {
+
+        service.searchCategoryDrinks(nameCategory).enqueue(new Callback<CocktailArray>() {
             @Override
-            public void onResponse(Call<CocktailList> call, Response<CocktailList> response) {
+            public void onResponse(Call<CocktailArray> call, Response<CocktailArray> response) {
                 if (response.isSuccessful()) {
-                    CocktailList drinks = response.body();
-                    List<Cocktail> c = null;
-                    if (drinks != null) {
-                        c = drinks.getDrinks();
-                    }
-                    drinkView.setAdapter(new HomeCategoryAdapter(c));
+                    List<Cocktail> drinks = response.body().getDrinks();
+                    drinkView.setAdapter(new HomeCategoryAdapter(drinks));
                 }
             }
 
-
             @Override
-            public void onFailure(Call<CocktailList> call, Throwable t) {
-
+            public void onFailure(Call<CocktailArray> call, Throwable t) {
             }
         });
     }

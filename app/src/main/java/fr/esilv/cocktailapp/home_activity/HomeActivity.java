@@ -10,7 +10,7 @@ import java.util.List;
 
 import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Category;
-import fr.esilv.cocktailapp.api.CategoryList;
+import fr.esilv.cocktailapp.api.CategoryArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
 import fr.esilv.cocktailapp.category_activity.CategoryCocktailAdapter;
 import retrofit2.Call;
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         categoryView = findViewById(R.id.recyclerCategory);
         categoryView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Set up API call
+        // Set up retrofit for API call
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -43,21 +43,17 @@ public class HomeActivity extends AppCompatActivity {
 
         service = retrofit.create(TheCocktailDBService.class);
 
-        service.searchCategory().enqueue(new Callback<CategoryList>() {
+        service.searchCategory().enqueue(new Callback<CategoryArray>() {
             @Override
-            public void onResponse(Call<CategoryList> call, Response<CategoryList> response) {
+            public void onResponse(Call<CategoryArray> call, Response<CategoryArray> response) {
                 if (response.isSuccessful()) {
-                    CategoryList categories = response.body();
-                    List<Category> c = null;
-                    if (categories != null) {
-                        c = categories.getDrinks();
-                    }
-                    categoryView.setAdapter(new CategoryCocktailAdapter(c));
+                    List<Category> categories = response.body().getDrinks();
+                    categoryView.setAdapter(new CategoryCocktailAdapter(categories));
                 }
             }
 
             @Override
-            public void onFailure(Call<CategoryList> call, Throwable t) {
+            public void onFailure(Call<CategoryArray> call, Throwable t) {
             }
         });
     }

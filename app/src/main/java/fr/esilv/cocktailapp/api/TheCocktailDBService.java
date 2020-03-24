@@ -8,13 +8,13 @@ import retrofit2.http.Query;
 public interface TheCocktailDBService {
 
     @GET("list.php?c=list")
-    Call<CategoryList> searchCategory();
+    Call<CategoryArray> searchCategory();
 
     @GET("filter.php")
-    Call<CocktailList> searchCategoryDrinks(@Query("c") String nameCategory);
+    Call<CocktailArray> searchCategoryDrinks(@Query("c") String nameCategory);
 
     @GET("lookup.php")
-    Call<CocktailList> searchCocktail(@Query("i") String idDrink);
+    Call<CocktailArray> searchCocktail(@Query("i") String idDrink);
 
 
 }

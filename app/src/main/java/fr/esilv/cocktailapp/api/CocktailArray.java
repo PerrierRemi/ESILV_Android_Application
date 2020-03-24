@@ -4,12 +4,11 @@ import androidx.annotation.NonNull;
 
 import java.util.List;
 
-public class CategoryList {
-    private List<Category> drinks;
+public class CocktailArray {
+    private List<Cocktail> drinks;
 
     @NonNull
-    public List<Category> getDrinks() {
+    public List<Cocktail> getDrinks() {
         return drinks;
     }
-
 }
