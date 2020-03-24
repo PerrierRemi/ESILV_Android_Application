@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp;
+package fr.esilv.cocktailapp.home_activity;
 
 import android.content.Intent;
 import android.view.View;
@@ -10,8 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.api.CategorySearchResultCocktails;
+import fr.esilv.cocktailapp.cocktail_activity.CocktailActivity;
 
-public class GridCategoryCocktailsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+public class HomeCategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     String nameDrink;
     String thumbDrink;
     String idDrink;
@@ -19,7 +23,7 @@ public class GridCategoryCocktailsHolder extends RecyclerView.ViewHolder impleme
     private TextView nameDrinkView;
     private ImageView thumbDrinkView;
 
-    public GridCategoryCocktailsHolder(@NonNull View itemView) {
+    public HomeCategoryHolder(@NonNull View itemView) {
         super(itemView);
         this.nameDrinkView = itemView.findViewById(R.id.nameDrinkView);
         this.thumbDrinkView = itemView.findViewById(R.id.thumbDrinkView);
@@ -38,7 +42,7 @@ public class GridCategoryCocktailsHolder extends RecyclerView.ViewHolder impleme
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(v.getContext(), CocktailDetailActivity.class);
+        Intent intent = new Intent(v.getContext(), CocktailActivity.class);
         intent.putExtra("ID_DRINK", idDrink);
         v.getContext().startActivity(intent);
 

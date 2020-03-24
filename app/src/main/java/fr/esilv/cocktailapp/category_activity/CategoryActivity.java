@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp;
+package fr.esilv.cocktailapp.category_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.api.CategorySearchResponseCocktails;
+import fr.esilv.cocktailapp.api.CategorySearchResultCocktails;
+import fr.esilv.cocktailapp.api.TheCocktailDBService;
+import fr.esilv.cocktailapp.home_activity.HomeCategoryAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class CategoryCocktailsActivity extends AppCompatActivity {
+public class CategoryActivity extends AppCompatActivity {
 
     private RecyclerView drinkView;
     private final String baseURL = "https://www.thecocktaildb.com/api/json/v1/1/";
@@ -44,7 +49,7 @@ public class CategoryCocktailsActivity extends AppCompatActivity {
                     if (drinks != null) {
                         c = drinks.getDrinks();
                     }
-                    drinkView.setAdapter(new GridCategoryCocktailsAdapter(c));
+                    drinkView.setAdapter(new HomeCategoryAdapter(c));
                 }
             }
 

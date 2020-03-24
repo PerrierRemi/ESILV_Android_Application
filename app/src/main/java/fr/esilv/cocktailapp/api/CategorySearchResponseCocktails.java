@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp;
+package fr.esilv.cocktailapp.api;
 
 import androidx.annotation.NonNull;
 
@@ -8,7 +8,7 @@ public class CategorySearchResponseCocktails {
     private List<CategorySearchResultCocktails> drinks;
 
     @NonNull
-    List<CategorySearchResultCocktails> getDrinks() {
+    public List<CategorySearchResultCocktails> getDrinks() {
         return drinks;
     }
 }

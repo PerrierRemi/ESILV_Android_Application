@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp;
+package fr.esilv.cocktailapp.api;
 
 import androidx.annotation.NonNull;
 

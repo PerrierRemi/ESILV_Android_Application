@@ -1,10 +1,12 @@
-package fr.esilv.cocktailapp;
+package fr.esilv.cocktailapp.cocktail_activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CocktailDetailActivity extends AppCompatActivity {
+import fr.esilv.cocktailapp.R;
+
+public class CocktailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
