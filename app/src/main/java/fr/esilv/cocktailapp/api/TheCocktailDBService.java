@@ -15,6 +15,4 @@ public interface TheCocktailDBService {
 
     @GET("lookup.php")
     Call<CocktailArray> searchCocktail(@Query("i") String idDrink);
-
-
 }

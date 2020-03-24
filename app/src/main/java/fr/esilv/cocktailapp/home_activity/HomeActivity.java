@@ -12,7 +12,6 @@ import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Category;
 import fr.esilv.cocktailapp.api.CategoryArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
-import fr.esilv.cocktailapp.category_activity.CategoryCocktailAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -48,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onResponse(Call<CategoryArray> call, Response<CategoryArray> response) {
                 if (response.isSuccessful()) {
                     List<Category> categories = response.body().getDrinks();
-                    categoryView.setAdapter(new CategoryCocktailAdapter(categories));
+                    categoryView.setAdapter(new CategoryAdapter(categories));
                 }
             }
 
