@@ -4,21 +4,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/nb_home"
         android:icon="@drawable/ic_home"
         android:title="@string/ic_home"
-        app:showAsAction="always"></item>
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/search"
+        android:id="@+id/nb_search"
         android:icon="@drawable/ic_search"
         android:title="@string/ic_search"
-        app:showAsAction="always|withText"></item>
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/favorite"
+        android:id="@+id/nb_favorite"
         android:icon="@drawable/ic_cocktail"
         android:title="@string/ic_favorite"
-        app:showAsAction="always|withText"></item>
+        app:showAsAction="always" />
 
 </menu>

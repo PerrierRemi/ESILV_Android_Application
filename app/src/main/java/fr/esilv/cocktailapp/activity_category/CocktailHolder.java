@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.category_activity;
+package fr.esilv.cocktailapp.activity_category;
 
 import android.content.Intent;
 import android.view.View;
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.activity_cocktail.CocktailActivity;
 import fr.esilv.cocktailapp.api.Cocktail;
-import fr.esilv.cocktailapp.cocktail_activity.CocktailActivity;
 
 
 public class CocktailHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

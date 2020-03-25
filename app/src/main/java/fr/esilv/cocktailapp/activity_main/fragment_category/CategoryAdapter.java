@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.home_activity;
+package fr.esilv.cocktailapp.activity_main.fragment_category;
 
 import android.view.LayoutInflater;
 import android.view.View;

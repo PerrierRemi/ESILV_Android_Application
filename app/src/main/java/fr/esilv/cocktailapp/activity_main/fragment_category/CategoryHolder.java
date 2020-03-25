@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.home_activity;
+package fr.esilv.cocktailapp.activity_main.fragment_category;
 
 import android.content.Intent;
 import android.view.View;
@@ -8,8 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.activity_category.CategoryActivity;
 import fr.esilv.cocktailapp.api.Category;
-import fr.esilv.cocktailapp.category_activity.CategoryActivity;
 
 public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     String nameCategory;

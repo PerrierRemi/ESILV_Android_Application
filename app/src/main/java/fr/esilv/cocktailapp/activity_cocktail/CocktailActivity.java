@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.cocktail_activity;
+package fr.esilv.cocktailapp.activity_cocktail;
 
 import android.content.Intent;
 import android.os.Bundle;
