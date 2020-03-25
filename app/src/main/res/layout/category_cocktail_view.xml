@@ -13,7 +13,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         app:cardBackgroundColor="@color/blackgreen"
-        app:cardCornerRadius="13dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="100dp">
 
         <RelativeLayout
@@ -26,7 +26,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textColor="@color/lightgreen"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
 

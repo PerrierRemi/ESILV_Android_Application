@@ -2,6 +2,7 @@ package fr.esilv.cocktailapp.activity_category;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -25,6 +26,7 @@ public class CategoryActivity extends AppCompatActivity {
     private RecyclerView drinkView;
     private TheCocktailDBService service;
     private String nameCategory;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,14 @@ public class CategoryActivity extends AppCompatActivity {
 
         // Set up RecyclerView
         drinkView = findViewById(R.id.recyclerDrink);
+        textView = findViewById(R.id.CategoryName);
         drinkView.setLayoutManager(new GridLayoutManager(this, 2));
+
 
         // Set up name category via Intent
         Intent intent = getIntent();
         nameCategory = intent.getExtras().getString("NAME_CATEGORY");
+        textView.setText(nameCategory);
 
         // Set up Retrofit for API call
         Retrofit retrofit = new Retrofit.Builder()
