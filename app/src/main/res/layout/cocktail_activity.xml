@@ -3,17 +3,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- TODO: Improve design -->
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/cocktailName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Cocktail Name"
         android:textSize="40sp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/favorite"
+        android:layout_width="102dp"
+        android:layout_height="64dp"
+        android:layout_alignParentRight="true"
+        android:text="Favorite" />
+
+    <TextView
+        android:id="@+id/requirement_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
-        android:layout_alignParentRight="true" />
+        android:layout_below="@+id/cocktailName"
+        android:layout_marginTop="10dp"
+        android:text="Requirements"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/requirement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLABLABLBALA"
+        android:layout_below="@+id/requirement_title" />
+
+    <TextView
+        android:id="@+id/instruction_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/requirement"
+        android:layout_marginTop="10dp"
+        android:text="Instructions"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BLABLABLBALA"
+        android:layout_below="@+id/instruction_title" />
+
 </RelativeLayout>
