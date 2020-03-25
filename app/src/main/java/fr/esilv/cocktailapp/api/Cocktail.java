@@ -1,169 +1,115 @@
 package fr.esilv.cocktailapp.api;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
 public class Cocktail {
 
     @SerializedName("idDrink")
-    @Expose
     private String idDrink;
     @SerializedName("strDrink")
-    @Expose
     private String strDrink;
     @SerializedName("strDrinkAlternate")
-    @Expose
     private String strDrinkAlternate;
     @SerializedName("strDrinkES")
-    @Expose
     private String strDrinkES;
     @SerializedName("strDrinkDE")
-    @Expose
     private String strDrinkDE;
     @SerializedName("strDrinkFR")
-    @Expose
     private String strDrinkFR;
     @SerializedName("strDrinkZH-HANS")
-    @Expose
     private String strDrinkZHHANS;
     @SerializedName("strDrinkZH-HANT")
-    @Expose
     private String strDrinkZHHANT;
     @SerializedName("strTags")
-    @Expose
     private String strTags;
     @SerializedName("strVideo")
-    @Expose
     private String strVideo;
     @SerializedName("strCategory")
-    @Expose
     private String strCategory;
     @SerializedName("strIBA")
-    @Expose
     private String strIBA;
     @SerializedName("strAlcoholic")
-    @Expose
     private String strAlcoholic;
     @SerializedName("strGlass")
-    @Expose
     private String strGlass;
     @SerializedName("strInstructions")
-    @Expose
     private String strInstructions;
     @SerializedName("strInstructionsES")
-    @Expose
     private String strInstructionsES;
     @SerializedName("strInstructionsDE")
-    @Expose
     private String strInstructionsDE;
-    @SerializedName("strInstructionsFR")
-    @Expose
-    private String strInstructionsFR;
     @SerializedName("strInstructionsZH-HANS")
-    @Expose
     private String strInstructionsZHHANS;
+    @SerializedName("strInstructionsFR")
+    private String strInstructionsFR;
     @SerializedName("strInstructionsZH-HANT")
-    @Expose
     private String strInstructionsZHHANT;
     @SerializedName("strDrinkThumb")
-    @Expose
     private String strDrinkThumb;
     @SerializedName("strIngredient1")
-    @Expose
     private String strIngredient1;
     @SerializedName("strIngredient2")
-    @Expose
     private String strIngredient2;
     @SerializedName("strIngredient3")
-    @Expose
     private String strIngredient3;
     @SerializedName("strIngredient4")
-    @Expose
     private String strIngredient4;
     @SerializedName("strIngredient5")
-    @Expose
     private String strIngredient5;
     @SerializedName("strIngredient6")
-    @Expose
     private String strIngredient6;
     @SerializedName("strIngredient7")
-    @Expose
     private String strIngredient7;
     @SerializedName("strIngredient8")
-    @Expose
     private String strIngredient8;
     @SerializedName("strIngredient9")
-    @Expose
     private String strIngredient9;
     @SerializedName("strIngredient10")
-    @Expose
     private String strIngredient10;
     @SerializedName("strIngredient11")
-    @Expose
     private String strIngredient11;
     @SerializedName("strIngredient12")
-    @Expose
     private String strIngredient12;
     @SerializedName("strIngredient13")
-    @Expose
     private String strIngredient13;
     @SerializedName("strIngredient14")
-    @Expose
     private String strIngredient14;
     @SerializedName("strIngredient15")
-    @Expose
     private String strIngredient15;
     @SerializedName("strMeasure1")
-    @Expose
     private String strMeasure1;
     @SerializedName("strMeasure2")
-    @Expose
     private String strMeasure2;
     @SerializedName("strMeasure3")
-    @Expose
     private String strMeasure3;
     @SerializedName("strMeasure4")
-    @Expose
     private String strMeasure4;
     @SerializedName("strMeasure5")
-    @Expose
     private String strMeasure5;
     @SerializedName("strMeasure6")
-    @Expose
     private String strMeasure6;
     @SerializedName("strMeasure7")
-    @Expose
     private String strMeasure7;
     @SerializedName("strMeasure8")
-    @Expose
     private String strMeasure8;
     @SerializedName("strMeasure9")
-    @Expose
     private String strMeasure9;
     @SerializedName("strMeasure10")
-    @Expose
     private String strMeasure10;
     @SerializedName("strMeasure11")
-    @Expose
     private String strMeasure11;
     @SerializedName("strMeasure12")
-    @Expose
     private String strMeasure12;
     @SerializedName("strMeasure13")
-    @Expose
     private String strMeasure13;
     @SerializedName("strMeasure14")
-    @Expose
     private String strMeasure14;
     @SerializedName("strMeasure15")
-    @Expose
     private String strMeasure15;
     @SerializedName("strCreativeCommonsConfirmed")
-    @Expose
     private String strCreativeCommonsConfirmed;
     @SerializedName("dateModified")
-    @Expose
     private String dateModified;
 
     public String getIdDrink() {

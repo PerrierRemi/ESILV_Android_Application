@@ -2,9 +2,12 @@ package fr.esilv.cocktailapp.cocktail_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.squareup.picasso.Picasso;
 
 import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Cocktail;
@@ -25,6 +28,7 @@ public class CocktailActivity extends AppCompatActivity {
     private TextView cocktailName;
     private TextView instructions;
     private TextView requirements;
+    private ImageView picture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,10 @@ public class CocktailActivity extends AppCompatActivity {
 
         // Set up view
         setContentView(R.layout.cocktail_activity);
-        cocktailName = findViewById(R.id.cocktailName);
+        cocktailName = findViewById(R.id.cocktail_name);
         instructions = findViewById(R.id.instruction);
         requirements = findViewById(R.id.requirement);
+        picture = findViewById(R.id.cocktail_picture);
 
         // Get cocktail ID via Intent
         Intent intent = getIntent();
@@ -55,8 +60,11 @@ public class CocktailActivity extends AppCompatActivity {
                     // Get cocktail from API response
                     Cocktail cocktail = response.body().getCocktails().get(0);
                     // Set view with API response
+                    // Title
                     cocktailName.setText(cocktail.getStrDrink());
+                    // Instructions
                     instructions.setText(cocktail.getStrInstructions());
+                    // Requirements
                     String strRequirements = "";
                     if (cocktail.getStrIngredient1() != null) {
                         strRequirements += cocktail.getStrIngredient1();
@@ -119,6 +127,8 @@ public class CocktailActivity extends AppCompatActivity {
                         strRequirements += " - " + cocktail.getStrMeasure10();
                     }
                     requirements.setText(strRequirements);
+                    // Picture
+                    Picasso.get().load(cocktail.getStrDrinkThumb()).resize(500, 500).centerCrop().into(picture);
                 }
             }
 
