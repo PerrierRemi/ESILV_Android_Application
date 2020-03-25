@@ -2,6 +2,7 @@ package fr.esilv.cocktailapp.cocktail_activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,12 +30,15 @@ public class CocktailActivity extends AppCompatActivity {
         // Set up id
         Intent intent = getIntent();
         idCocktail = intent.getExtras().getString("ID_DRINK");
+        Log.d("DEV", idCocktail);
 
         // Set up Retrofit for API call
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        service = retrofit.create(TheCocktailDBService.class);
 
         service.searchCocktail(idCocktail).enqueue(new Callback<Cocktail>() {
             @Override
