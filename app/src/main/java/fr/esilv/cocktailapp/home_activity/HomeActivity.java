@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<CategoryArray> call, Response<CategoryArray> response) {
                 if (response.isSuccessful()) {
-                    List<Category> categories = response.body().getDrinks();
+                    List<Category> categories = response.body().getCategories();
                     categoryView.setAdapter(new CategoryAdapter(categories));
                 }
             }

@@ -24,7 +24,7 @@ public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnCl
     }
 
     public void bind(final Category categorySearchResult) {
-        nameCategory = categorySearchResult.getStrCategory();
+        nameCategory = categorySearchResult.getCategory();
         nameCategoryView.setText(nameCategory);
     }
 

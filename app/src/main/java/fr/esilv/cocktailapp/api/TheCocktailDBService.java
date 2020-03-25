@@ -14,5 +14,5 @@ public interface TheCocktailDBService {
     Call<CocktailArray> searchCategoryDrinks(@Query("c") String nameCategory);
 
     @GET("lookup.php")
-    Call<CocktailArray> searchCocktail(@Query("i") String idDrink);
+    Call<Cocktail> searchCocktail(@Query("i") String idDrink);
 }

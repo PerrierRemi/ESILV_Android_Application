@@ -1,8 +1,12 @@
 package fr.esilv.cocktailapp.api;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Category {
-    private String strCategory;
-    public String getStrCategory() {
-        return strCategory;
+    @SerializedName("strCategory")
+    private String category;
+
+    public String getCategory() {
+        return category;
     }
 }

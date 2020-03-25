@@ -45,6 +45,5 @@ public class CocktailHolder extends RecyclerView.ViewHolder implements View.OnCl
         Intent intent = new Intent(v.getContext(), CocktailActivity.class);
         intent.putExtra("ID_DRINK", idDrink);
         v.getContext().startActivity(intent);
-
     }
 }

@@ -2,13 +2,15 @@ package fr.esilv.cocktailapp.api;
 
 import androidx.annotation.NonNull;
 
-import java.util.List;
+import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
 public class CocktailArray {
-    private List<Cocktail> drinks;
+    @SerializedName("drinks")
+    private List<Cocktail> cocktails;
 
     @NonNull
-    public List<Cocktail> getDrinks() {
-        return drinks;
+    public List<Cocktail> getCocktails() {
+        return cocktails;
     }
 }

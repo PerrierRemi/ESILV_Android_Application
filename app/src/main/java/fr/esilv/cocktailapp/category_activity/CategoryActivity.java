@@ -52,7 +52,7 @@ public class CategoryActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<CocktailArray> call, Response<CocktailArray> response) {
                 if (response.isSuccessful()) {
-                    List<Cocktail> drinks = response.body().getDrinks();
+                    List<Cocktail> drinks = response.body().getCocktails();
                     drinkView.setAdapter(new CocktailAdapter(drinks));
                 }
             }
