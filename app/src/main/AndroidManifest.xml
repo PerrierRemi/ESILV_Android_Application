@@ -13,14 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
-        <activity android:name=".activity_cocktail.CocktailActivity"></activity>
-
+        <activity android:name=".activity_cocktail.CocktailActivity" />
         <activity android:name=".activity_category.CategoryActivity" />
-
         <activity android:name=".activity_main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
