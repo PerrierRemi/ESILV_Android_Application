@@ -13,8 +13,8 @@ import java.util.List;
 import fr.esilv.cocktailapp.api.Cocktail;
 
 public class SharedPreference {
-    public static final String PREFS_NAME = "TEST_1";
-    public static final String FAVORITES = "TEST_1";
+    public static final String PREFS_NAME = "TEST_3";
+    public static final String FAVORITES = "TEST_3";
 
     public SharedPreference() {
         super();

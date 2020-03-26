@@ -143,9 +143,13 @@ public class CocktailActivity extends AppCompatActivity {
                     Picasso.get().load(cocktail.getStrDrinkThumb()).resize(500, 500).centerCrop().into(picture);
                     // Checkbox
                     favoriteManager = new SharedPreference();
-                    List<Cocktail> favorite = favoriteManager.getFavorites(getApplicationContext());
-                    if (favorite != null) {
-                        if (favorite.contains(cocktail)) checkBox.setChecked(true);
+                    List<Cocktail> favorites = favoriteManager.getFavorites(getApplicationContext());
+                    if (favorites != null) {
+                        for (Cocktail favorite : favorites) {
+                            if (cocktail.equals(favorite)) {
+                                checkBox.setChecked(true);
+                            }
+                        }
                     }
                 }
             }
@@ -158,7 +162,6 @@ public class CocktailActivity extends AppCompatActivity {
 
     public void ChangeFavorite(View view) {
         if (this.checkBox.isChecked()) {
-            Log.d("ChangeFavorite", "ADD");
             favoriteManager.addFavorite(getApplicationContext(), cocktail);
         } else {
             favoriteManager.removeFavorite(getApplicationContext(), cocktail);

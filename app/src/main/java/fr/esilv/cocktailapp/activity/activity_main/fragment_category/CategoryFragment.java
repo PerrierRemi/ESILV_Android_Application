@@ -50,7 +50,6 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onResponse(Call<CategoryArray> call, Response<CategoryArray> response) {
                 if (response.isSuccessful()) {
-                    Log.d("DEV !!", "here");
                     List<Category> categories = response.body().getCategories();
                     categoryView.setAdapter(new CategoryAdapter(categories));
                 }

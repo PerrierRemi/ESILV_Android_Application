@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,7 +30,7 @@ public class FavoriteFragment extends Fragment {
 
         // Set up RecyclerView
         recylerView = view.findViewById(R.id.recyclerFavorite);
-        recylerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        recylerView.setLayoutManager(new GridLayoutManager(this.getContext(), 2));
 
         // Get favorites from SharedPreferences
         favoriteManager = new SharedPreference();
