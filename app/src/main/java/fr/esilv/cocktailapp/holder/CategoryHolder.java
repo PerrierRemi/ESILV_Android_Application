@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.activity.activity_category.CategoryActivity;
+import fr.esilv.cocktailapp.activity_category.CategoryActivity;
 import fr.esilv.cocktailapp.api.Category;
 
 public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

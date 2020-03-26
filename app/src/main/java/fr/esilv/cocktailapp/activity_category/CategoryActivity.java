@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity.activity_category;
+package fr.esilv.cocktailapp.activity_category;
 
 import android.content.Intent;
 import android.os.Bundle;

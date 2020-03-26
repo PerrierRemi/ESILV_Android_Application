@@ -1,7 +1,6 @@
-package fr.esilv.cocktailapp.activity.activity_main.fragment_category;
+package fr.esilv.cocktailapp.activity_main.fragment_category;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

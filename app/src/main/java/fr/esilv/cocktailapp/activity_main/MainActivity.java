@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity.activity_main;
+package fr.esilv.cocktailapp.activity_main;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,9 +11,9 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.activity.activity_main.fragment_category.CategoryFragment;
-import fr.esilv.cocktailapp.activity.activity_main.fragment_favorite.FavoriteFragment;
-import fr.esilv.cocktailapp.activity.activity_main.fragment_search.SearchFragment;
+import fr.esilv.cocktailapp.activity_main.fragment_category.CategoryFragment;
+import fr.esilv.cocktailapp.activity_main.fragment_favorite.FavoriteFragment;
+import fr.esilv.cocktailapp.activity_main.fragment_search.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
     Fragment frag_category = new CategoryFragment();

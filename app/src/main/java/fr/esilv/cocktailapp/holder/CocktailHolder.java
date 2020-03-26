@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import fr.esilv.cocktailapp.R;
-import fr.esilv.cocktailapp.activity.activity_cocktail.CocktailActivity;
+import fr.esilv.cocktailapp.activity_cocktail.CocktailActivity;
 import fr.esilv.cocktailapp.api.Cocktail;
 
 
