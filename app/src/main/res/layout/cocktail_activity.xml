@@ -8,7 +8,6 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <!-- TODO: Improve design -->
 
         <ImageView
             android:id="@+id/cocktail_picture"
@@ -88,6 +87,7 @@
             android:textSize="25sp"
             android:paddingLeft="45dp"
             android:paddingRight="45dp"
+            android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@id/instruction_title"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
