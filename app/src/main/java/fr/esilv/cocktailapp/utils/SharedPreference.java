@@ -13,8 +13,8 @@ import java.util.List;
 import fr.esilv.cocktailapp.api.Cocktail;
 
 public class SharedPreference {
-    public static final String PREFS_NAME = "TEST";
-    public static final String FAVORITES = "TEST";
+    public static final String PREFS_NAME = "TEST_1";
+    public static final String FAVORITES = "TEST_1";
 
     public SharedPreference() {
         super();
@@ -41,10 +41,14 @@ public class SharedPreference {
 
     public void addFavorite(Context context, Cocktail cocktail) {
         List<Cocktail> favorites = getFavorites(context);
-        if (favorites == null)
-            favorites = new ArrayList<Cocktail>();
-        favorites.add(cocktail);
-        saveFavorites(context, favorites);
+        if (favorites != null) {
+            favorites.add(cocktail);
+            saveFavorites(context, favorites);
+        } else {
+            List<Cocktail> new_favorites = new ArrayList<Cocktail>();
+            new_favorites.add(cocktail);
+            saveFavorites(context, new_favorites);
+        }
     }
 
     public void removeFavorite(Context context, Cocktail cocktail) {
@@ -62,11 +66,9 @@ public class SharedPreference {
 
         if (settings.contains(FAVORITES)) {
             String jsonFavorites = settings.getString(FAVORITES, null);
-            Log.d("GET", jsonFavorites);
             Gson gson = new Gson();
             Cocktail[] favoriteItems = gson.fromJson(jsonFavorites, Cocktail[].class);
-            Log.d("GET", Arrays.asList(favoriteItems).toString());
-            return Arrays.asList(favoriteItems);
+            return new ArrayList<Cocktail>(Arrays.asList(favoriteItems));
         } else
             return null;
     }

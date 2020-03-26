@@ -144,7 +144,6 @@ public class CocktailActivity extends AppCompatActivity {
                     // Checkbox
                     favoriteManager = new SharedPreference();
                     List<Cocktail> favorite = favoriteManager.getFavorites(getApplicationContext());
-                    Log.d("Favorites", favorite.toString());
                     if (favorite != null) {
                         if (favorite.contains(cocktail)) checkBox.setChecked(true);
                     }
