@@ -62,8 +62,10 @@ public class SharedPreference {
 
         if (settings.contains(FAVORITES)) {
             String jsonFavorites = settings.getString(FAVORITES, null);
+            Log.d("GET", jsonFavorites);
             Gson gson = new Gson();
             Cocktail[] favoriteItems = gson.fromJson(jsonFavorites, Cocktail[].class);
+            Log.d("GET", Arrays.asList(favoriteItems).toString());
             return Arrays.asList(favoriteItems);
         } else
             return null;
