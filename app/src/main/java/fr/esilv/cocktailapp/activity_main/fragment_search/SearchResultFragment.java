@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,6 +32,7 @@ public class SearchResultFragment extends Fragment {
     private TheCocktailDBService service;
     private final String BaseURL = "https://www.thecocktaildb.com/api/json/v1/1/";
     private String nameSearched;
+    private TextView textView;
 
     public SearchResultFragment() {
 
@@ -42,9 +44,12 @@ public class SearchResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         view =inflater.inflate(R.layout.searchresult_fragment,container,false);
         recyclerView = view.findViewById(R.id.recyclerSearch);
+        textView = view.findViewById(R.id.textSearched);
         recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(),2));
         Bundle bundle = getArguments();
         nameSearched = bundle.getString("query");
+        textView.setText(nameSearched);
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BaseURL)
