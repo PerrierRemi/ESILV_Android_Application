@@ -14,11 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
 
-        <activity android:name=".activity_cocktail.CocktailActivity"></activity>
+        <activity android:name=".activity.activity_cocktail.CocktailActivity"></activity>
 
-        <activity android:name=".activity_category.CategoryActivity" />
+        <activity android:name=".activity.activity_category.CategoryActivity" />
 
-        <activity android:name=".activity_main.MainActivity">
+        <activity android:name=".activity.activity_main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

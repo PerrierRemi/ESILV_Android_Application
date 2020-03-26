@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity_category;
+package fr.esilv.cocktailapp.activity.activity_category;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.adapter.CocktailAdapter;
 import fr.esilv.cocktailapp.api.Cocktail;
 import fr.esilv.cocktailapp.api.CocktailArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;

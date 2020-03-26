@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity_main.fragment_category;
+package fr.esilv.cocktailapp.activity.activity_main.fragment_category;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.adapter.CategoryAdapter;
 import fr.esilv.cocktailapp.api.Category;
 import fr.esilv.cocktailapp.api.CategoryArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;

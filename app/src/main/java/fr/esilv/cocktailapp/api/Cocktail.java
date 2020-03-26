@@ -536,4 +536,8 @@ public class Cocktail {
         this.dateModified = dateModified;
     }
 
+    @Override
+    public String toString() {
+        return this.getStrDrink() + "\n";
+    }
 }

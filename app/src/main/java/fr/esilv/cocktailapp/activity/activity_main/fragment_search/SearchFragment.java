@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity_main.fragment_search;
+package fr.esilv.cocktailapp.activity.activity_main.fragment_search;
 
 import androidx.fragment.app.Fragment;
 
