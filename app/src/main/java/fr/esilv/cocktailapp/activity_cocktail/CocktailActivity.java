@@ -2,6 +2,8 @@ package fr.esilv.cocktailapp.activity_cocktail;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,10 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 import fr.esilv.cocktailapp.R;
 import fr.esilv.cocktailapp.api.Cocktail;
 import fr.esilv.cocktailapp.api.CocktailArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
+import fr.esilv.cocktailapp.utils.SharedPreference;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,10 +30,15 @@ public class CocktailActivity extends AppCompatActivity {
     private TheCocktailDBService service;
     private String idCocktail;
 
+    private Cocktail cocktail;
+
     private TextView cocktailName;
     private TextView instructions;
     private TextView requirements;
     private ImageView picture;
+    private CheckBox checkBox;
+
+    private SharedPreference favoriteManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,7 @@ public class CocktailActivity extends AppCompatActivity {
         instructions = findViewById(R.id.instruction);
         requirements = findViewById(R.id.requirement);
         picture = findViewById(R.id.cocktail_picture);
+        checkBox = findViewById(R.id.favorite);
 
         // Get cocktail ID via Intent
         Intent intent = getIntent();
@@ -58,7 +69,7 @@ public class CocktailActivity extends AppCompatActivity {
             public void onResponse(Call<CocktailArray> call, Response<CocktailArray> response) {
                 if (response.isSuccessful()) {
                     // Get cocktail from API response
-                    Cocktail cocktail = response.body().getCocktails().get(0);
+                    cocktail = response.body().getCocktails().get(0);
                     // Set view with API response
                     // Title
                     cocktailName.setText(cocktail.getStrDrink());
@@ -129,6 +140,16 @@ public class CocktailActivity extends AppCompatActivity {
                     requirements.setText(strRequirements);
                     // Picture
                     Picasso.get().load(cocktail.getStrDrinkThumb()).resize(500, 500).centerCrop().into(picture);
+                    // Checkbox
+                    favoriteManager = new SharedPreference();
+                    List<Cocktail> favorites = favoriteManager.getFavorites(getApplicationContext());
+                    if (favorites != null) {
+                        for (Cocktail favorite : favorites) {
+                            if (cocktail.equals(favorite)) {
+                                checkBox.setChecked(true);
+                            }
+                        }
+                    }
                 }
             }
 
@@ -136,5 +157,13 @@ public class CocktailActivity extends AppCompatActivity {
             public void onFailure(Call<CocktailArray> call, Throwable t) {
             }
         });
+    }
+
+    public void ChangeFavorite(View view) {
+        if (this.checkBox.isChecked()) {
+            favoriteManager.addFavorite(getApplicationContext(), cocktail);
+        } else {
+            favoriteManager.removeFavorite(getApplicationContext(), cocktail);
+        }
     }
 }

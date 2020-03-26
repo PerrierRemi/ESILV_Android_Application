@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.adapter.CocktailAdapter;
 import fr.esilv.cocktailapp.api.Cocktail;
 import fr.esilv.cocktailapp.api.CocktailArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;

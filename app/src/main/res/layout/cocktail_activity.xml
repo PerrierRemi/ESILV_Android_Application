@@ -8,7 +8,6 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
         <ImageView
             android:id="@+id/cocktail_picture"
             android:layout_width="match_parent"
@@ -39,6 +38,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/black"
+            android:onClick="ChangeFavorite"
             android:text="Favorite" />
 
 

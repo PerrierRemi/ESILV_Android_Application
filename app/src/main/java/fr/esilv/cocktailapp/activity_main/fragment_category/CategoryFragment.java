@@ -1,7 +1,6 @@
 package fr.esilv.cocktailapp.activity_main.fragment_category;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.adapter.CategoryAdapter;
 import fr.esilv.cocktailapp.api.Category;
 import fr.esilv.cocktailapp.api.CategoryArray;
 import fr.esilv.cocktailapp.api.TheCocktailDBService;
@@ -49,7 +49,6 @@ public class CategoryFragment extends Fragment {
             @Override
             public void onResponse(Call<CategoryArray> call, Response<CategoryArray> response) {
                 if (response.isSuccessful()) {
-                    Log.d("DEV !!", "here");
                     List<Category> categories = response.body().getCategories();
                     categoryView.setAdapter(new CategoryAdapter(categories));
                 }

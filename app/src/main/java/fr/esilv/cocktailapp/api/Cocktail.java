@@ -1,5 +1,7 @@
 package fr.esilv.cocktailapp.api;
 
+import android.util.Log;
+
 import com.google.gson.annotations.SerializedName;
 
 
@@ -536,4 +538,18 @@ public class Cocktail {
         this.dateModified = dateModified;
     }
 
+    @Override
+    public String toString() {
+        return this.getStrDrink();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        try {
+            Cocktail other = (Cocktail) obj;
+            return this.getIdDrink().equals(other.getIdDrink());
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

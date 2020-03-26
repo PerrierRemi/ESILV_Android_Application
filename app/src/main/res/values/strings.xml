@@ -6,5 +6,8 @@
     <string name="ic_home">Home</string>
     <string name="ic_search">Search</string>
     <string name="ic_favorite">Favorite</string>
+  
+    <string name="favorite_fragment_title">Your favorites cocktails</string>
     <string name="questionSearch">What do you want to drink today ?</string>
+
 </resources>

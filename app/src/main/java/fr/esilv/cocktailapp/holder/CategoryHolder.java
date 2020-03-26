@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity_main.fragment_category;
+package fr.esilv.cocktailapp.holder;
 
 import android.content.Intent;
 import android.view.View;

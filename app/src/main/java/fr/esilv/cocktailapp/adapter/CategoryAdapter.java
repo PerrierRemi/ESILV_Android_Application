@@ -1,4 +1,4 @@
-package fr.esilv.cocktailapp.activity_main.fragment_category;
+package fr.esilv.cocktailapp.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import fr.esilv.cocktailapp.R;
+import fr.esilv.cocktailapp.holder.CategoryHolder;
 import fr.esilv.cocktailapp.api.Category;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryHolder> {
